@@ -4,11 +4,14 @@
   "description": "A diagram editor",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "build":"webpack"
   },
   "author": "Gus",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^2.2.2"
+    "awesome-typescript-loader": "^3.1.2",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1"
   }
 }

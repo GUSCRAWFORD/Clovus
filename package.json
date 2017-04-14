@@ -1,0 +1,14 @@
+{
+  "name": "clovus",
+  "version": "0.0.1",
+  "description": "A diagram editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "Gus",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.2.2"
+  }
+}

@@ -4,13 +4,13 @@ import 'angular-mocks';
 import 'angular-route';
 import {expect} from 'chai';
 import * as ClovusUi from '../../../clovus-ui/ClovusUi';
-describe('clovus-ui module', () => {
+describe('Default view', () => {
     var ctrl : ng.IComponentController;
     beforeEach(ng.mock.module('clovus-ui'));
     beforeEach(inject(($componentController:ng.IComponentControllerService)=>{
         ctrl = $componentController('default', null, {});
     }))
-    it('calls lodash', ()=>{
+    it('controller loads', ()=>{
         expect(ctrl).to.exist;
     });
 });

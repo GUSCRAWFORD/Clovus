@@ -4,9 +4,10 @@
   "description": "A diagram editor",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "karma start --single-run",
+    "test-watch":"karma start",
     "build": "webpack",
-    "docs": "typedoc --out docs process-control-models"
+    "build-docs": "typedoc --out docs process-control-models"
   },
   "author": "Gus",
   "license": "MIT",

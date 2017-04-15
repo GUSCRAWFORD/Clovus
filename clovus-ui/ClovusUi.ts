@@ -11,5 +11,6 @@ export class ClovusUi {
 }
 export * from './views';
 export * from './components';
+export * from './services';
 
 ng.element(()=>ng.bootstrap(document, [ClovusUi.moduleName]));

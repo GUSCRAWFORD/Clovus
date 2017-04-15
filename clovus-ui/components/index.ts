@@ -1,1 +1,1 @@
-export * from './ViewSplit.component';
+export * from './ResizeableViewPanel.component';

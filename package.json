@@ -5,13 +5,43 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "build":"webpack"
+    "build": "webpack",
+    "docs": "typedoc --out docs process-control-models"
   },
   "author": "Gus",
   "license": "MIT",
   "devDependencies": {
-    "awesome-typescript-loader": "^3.1.2",
+    "@types/angular-mocks": "^1.5.9",
+    "@types/chai": "^3.5.0",
+    "@types/mocha": "^2.2.40",
+    "angular-mocks": "^1.6.4",
+    "chai": "^3.5.0",
+    "html-loader": "^0.4.5",
+    "karma": "^1.6.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-remap-coverage": "^0.1.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-typescript": "^3.0.0",
+    "karma-webpack": "^2.0.3",
+    "mocha": "^3.2.0",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.14",
+    "sourcemap": "^0.1.0",
+    "ts-loader": "^2.0.3",
     "typescript": "^2.2.2",
     "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "@types/angular": "^1.6.14",
+    "@types/angular-route": "^1.3.3",
+    "@types/lodash": "^4.14.62",
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "install": "^0.8.8",
+    "lodash": "^4.17.4"
   }
 }

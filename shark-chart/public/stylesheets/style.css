@@ -8,11 +8,11 @@ a {
 }
 
 .panel.panel-default>.panel-body {
-  box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,.2);
   background-color: rgba(0,0,0,.1);
   padding:5pt;
 }
 
 resizeable-view-panel>.panel.panel-default>.panel-body {
-  box-shadow: 0px 2px 5px rgba(0,0,0,.2) inset;
+  box-shadow: 0 2px 5px rgba(0,0,0,.2) inset;
 }

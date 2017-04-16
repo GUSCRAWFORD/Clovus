@@ -20,7 +20,3 @@ test_async:
    - npm install
    - npm test
    - npm build
-
-build_async
-  script:
-  - npm build

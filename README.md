@@ -1,4 +1,5 @@
-# Clovus
+# Clovus ![CI](https://travis-ci.org/GUSCRAWFORD/Clovus.svg?branch=master)
+
 A diagram engine
 
 ## Process Control

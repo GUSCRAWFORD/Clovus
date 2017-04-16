@@ -68,7 +68,7 @@ module.exports = function(config) {
             },
             "html": "coverage",
             "text-summary": "",
-            "text-lcov":""
+            "lcovonly":"coverage/lcov"
         }
     },
     // web server port

@@ -26,4 +26,5 @@ addons:
 after_script:
   - CODECLIMATE_REPO_TOKEN=41e040597a8cc2d4de71c7c794e9c270cabc8383a1d3f12f114b9b168d04bebd
   - pwd
+  - ls
   - codeclimate-test-reporter < "./coverage/lcov/PhantomJS 2.1.1 (Windows 7 0.0.0)/lcovonly"

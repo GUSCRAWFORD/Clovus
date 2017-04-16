@@ -1,3 +1,4 @@
+language: node_js
 image: node:latest
 
 # Pick zero or more services to be used on all builds.

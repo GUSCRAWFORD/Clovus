@@ -21,7 +21,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai', 'sinon','karma-typescript'],
+    frameworks: ['mocha', 'chai', 'sinon', 'karma-typescript'],
 
 
     // list of files / patterns to load in the browser
@@ -45,9 +45,10 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress','karma-typescript'],
 
     plugins: ['karma-coverage',
+              'karma-remap-coverage',
               'karma-mocha',
               'karma-chai',
               'karma-sinon',
@@ -56,8 +57,18 @@ module.exports = function(config) {
               'karma-phantomjs-launcher',
               'karma-chrome-launcher',
               'karma-typescript'],
-    karmaTypescriptConfig : {
-      coverageOptions : {instrumentation : false }
+    karmaTypescriptConfig: {
+        reports:
+        {
+            "cobertura": {
+                "directory": "coverage",
+                "filename": "coverage.xml",
+                "subdirectory": "cobertura"
+            },
+            "html": "coverage",
+            "text-summary": "",
+            "lcovonly":"coverage/lcov"
+        }
     },
     // web server port
     port: 9876,
@@ -73,17 +84,17 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS','Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd clovus.local && npm start",
-    "test": "karma start --single-run",
+    "test": "karma start karma.ci.conf.js",
     "test-watch": "karma start",
     "build": "webpack",
     "build-dev": "webpack --watch",

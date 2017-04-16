@@ -1,9 +1,0 @@
-engines:
-  # ... CONFIG CONTENT ...
-  duplication:
-    enabled: true
-    # ... CONFIG CONTENT ...
-    checks:
-      Identical code:
-        enabled: false
-# ... CONFIG CONTENT ...

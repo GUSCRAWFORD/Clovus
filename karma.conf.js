@@ -67,7 +67,8 @@ module.exports = function(config) {
                 "subdirectory": "cobertura"
             },
             "html": "coverage",
-            "text-summary": ""
+            "text-summary": "",
+            "text-lcov":""
         }
     },
     // web server port

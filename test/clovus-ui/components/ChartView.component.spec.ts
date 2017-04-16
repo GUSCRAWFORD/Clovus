@@ -26,7 +26,6 @@ describe('ChartView component', () => {
     });
     describe('.handleMouseDown', ()=>{
         it('(MouseEvent) calls', ()=>{
-            ctrl.handleMouseDown({offsetX:0,offsetY:0});
             
         })
     });

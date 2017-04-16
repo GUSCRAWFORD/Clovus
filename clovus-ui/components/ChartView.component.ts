@@ -7,13 +7,9 @@ import * as ng from 'angular';
  */
 export class ChartView {
     constructor (private $element : ng.IRootElementService) {
-        this.$element.on('mousedown', this.handleMouseDown)
     }
     public items : Models.PresentationObject;
     
-    handleMouseDown (event : any) {
-        
-    }
 
 }
 ClovusUi.ngModule.component((ChartView as any).name.toCamelCase(), {

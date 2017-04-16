@@ -5,17 +5,21 @@ import 'angular-route';
 import {expect} from 'chai';
 import * as ClovusUi from '../../../clovus-ui/ClovusUi';
 describe('ResizeableViewPanel component', () => {
-    var ctrl : ClovusUi.ResizeableViewPanel;
+    var ctrl : ClovusUi.ResizeableViewPanel,
+        $rootScope : ng.IRootScopeService,
+        $scope;
     beforeEach(ng.mock.module('clovus-ui'));
     beforeEach(
         inject((
-            $componentController:ng.IComponentControllerService
+            $componentController:ng.IComponentControllerService,
+            _$rootScope_ : ng.IRootScopeService
         )=>{
-            
+            $rootScope = _$rootScope_;
             ng.element('<div></div>');
             ctrl = $componentController('resizeableViewPanel', 
                 {
-                    $element:ng.element('<div></div>')
+                    $element:ng.element('<div></div>'),
+                    $scope:$scope = $rootScope.$new()
                 }, {
                     /* bindings*/
                 }) as ClovusUi.ResizeableViewPanel;
@@ -26,7 +30,7 @@ describe('ResizeableViewPanel component', () => {
     });
     describe('.handleMouseDown', ()=>{
         it('(MouseEvent) calls', ()=>{
-            ctrl.handleMouseDown({offsetX:0,offsetY:0});
+            ctrl.handleMouseDown(ctrl)({offsetX:0,offsetY:0});
             
         })
     });

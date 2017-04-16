@@ -27,6 +27,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       {pattern:'clovus-ui/**/*.ts'},
+      {pattern:'process-control-models/**/*.ts'},
       {pattern:'test/**/*.ts'}
       ],
 

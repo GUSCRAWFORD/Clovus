@@ -7,10 +7,10 @@ module.exports = {
     vendor:['angular','angular-route']
   },
   output: {
-    filename: './clovus.local/public/dist/[name].bundle.js'
+    filename: './shark-chart/public/dist/[name].bundle.js'
   },
   resolve: {
-    extensions: ['.js','.ts']
+    extensions: ['.js','.ts','.partial.html']
   },
   module: {
     loaders: [
@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name:"vendor",
-      filename:"./clovus.local/public/dist/vendor.bundle.js"
+      filename:"./shark-chart/public/dist/vendor.bundle.js"
     })
   ],
   watchOptions: {

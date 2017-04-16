@@ -4,7 +4,7 @@
   "description": "A diagram editor",
   "main": "index.js",
   "scripts": {
-    "start": "cd clovus.local && npm start",
+    "start": "cd shark-chart && npm start",
     "test": "karma start karma.ci.conf.js",
     "test-watch": "karma start",
     "build": "webpack",

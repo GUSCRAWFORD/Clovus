@@ -1,3 +1,4 @@
+//WTF? is this for again?
 // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by: [~YOUR NAME~] <[~A URL FOR YOU~]>
@@ -12,7 +13,7 @@
  *~ loaded outside a module loader environment, declare that global here.
  *~ Otherwise, delete this declaration.
  */
-export as namespace Models;
+export as namespace Presentation;
 
 /*~ If this module has methods, declare them as functions like so.
 
@@ -33,5 +34,7 @@ export interface someType {
  *~ of the module, declare them inside a 'namespace'.
  */
 
-export * from './Data';
-export * from './Presentation';
+export {ChartView} from './ChartView';
+export {PresentationObject} from './PresentationObject';
+export {Size} from './Size';
+export {Units} from './Units';

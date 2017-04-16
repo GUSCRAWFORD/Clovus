@@ -22,7 +22,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai', 'karma-typescript'],
+    frameworks: ['mocha', 'chai', 'sinon', 'karma-typescript'],
 
 
     // list of files / patterns to load in the browser
@@ -52,6 +52,7 @@ module.exports = function(config) {
               'karma-remap-coverage',
               'karma-mocha',
               'karma-chai',
+              'karma-sinon',
               'karma-webpack',
               'karma-sourcemap-loader',
               'karma-phantomjs-launcher',

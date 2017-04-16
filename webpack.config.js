@@ -15,7 +15,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /.ts$/, loader: 'ts-loader' },
-      { test: /.partial.ts$/, loader: 'html-loader' }
+      { test: /.partial.html$/, loader: 'html-loader' }
     ]
   },
   plugins: [

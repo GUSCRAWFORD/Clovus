@@ -21,3 +21,6 @@ test_async:
    - npm test
    - npm build
 
+build_async
+  script:
+  - npm build

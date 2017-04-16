@@ -23,5 +23,6 @@ test_async:
 addons:
     code_climate:
         repo_token: 41e040597a8cc2d4de71c7c794e9c270cabc8383a1d3f12f114b9b168d04bebd
-script:
-  - CODECLIMATE_REPO_TOKEN=41e040597a8cc2d4de71c7c794e9c270cabc8383a1d3f12f114b9b168d04bebd codeclimate-test-reporter < "coverage/lcov/PhantomJS 2.1.1 (Windows 7 0.0.0)/lcovonly"
+after_success:
+  script:
+    - CODECLIMATE_REPO_TOKEN=41e040597a8cc2d4de71c7c794e9c270cabc8383a1d3f12f114b9b168d04bebd codeclimate-test-reporter < "coverage/lcov/PhantomJS 2.1.1 (Windows 7 0.0.0)/lcovonly"

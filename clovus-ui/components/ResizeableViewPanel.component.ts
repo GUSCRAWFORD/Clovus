@@ -14,19 +14,16 @@ enum CssProp {
     bottom,
     width,
     height
+
 }
 export class ResizeableViewPanel {
     public static $inject = ['$element', '$scope'];
-    public static edgeSize : number = 15;
+    
     constructor (
         private $element : ng.IRootElementService,
         private $scope : ng.IScope
                 ) {
-        this.eventHash = {
-            mousedown :  this.handleMouseDown(this),
-            mouseup: this.handleMouseUp(this)
-        };
-        for (var key in this.eventHash) this.$element.on(key,(this.eventHash as any)[key]);
+        this.$element.on('mousedown', this.handleMouseDown(this));
         this.mouse = new Models.Location();
         this.size = new Models.Size();
         this.size.units = Models.Units.px;
@@ -35,9 +32,9 @@ export class ResizeableViewPanel {
         elm.style.left = elm.style.top = "0px";
         elm.style.width = elm.offsetWidth + "px";
         elm.style.height = elm.offsetHeight + "px";
+
     }
 
-    private eventHash : any;
     public size : Models.Size;
     public mouse : Models.Location;
     
@@ -46,10 +43,9 @@ export class ResizeableViewPanel {
             currentStyle = elm.style[CssProp[side] as any].match(/\d+/),
             current = currentStyle ? parseInt(currentStyle[0],10):0;
         elm.style[CssProp[side] as any] = String(current + value) + Models.Units[units];
+
     }
-    handleMouseUp (ctrl : ResizeableViewPanel) { return (event : any)=> {
-        ctrl.$element.off('mousemove', ctrl.eventHash.mousemove);
-    } }
+
     handleMouseDown (ctrl : ResizeableViewPanel) { return (event : any)=> {
         var elm = ctrl.$element[0];
         ctrl.mouse.x = event.offsetX;
@@ -86,6 +82,7 @@ export class ResizeableViewPanel {
                 : (side === CssProp.bottom ? (-1) * event.movementY : event.movementY));
         ctrl.$scope.$apply();
     } }    
+
 }
 ClovusUi.ngModule.component((ResizeableViewPanel as any).name.toCamelCase(), {
     controller: ResizeableViewPanel,

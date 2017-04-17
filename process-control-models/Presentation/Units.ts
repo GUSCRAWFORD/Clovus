@@ -1,5 +1,5 @@
 export enum Units {
-    Pixels,
-    Picas,
-    Points
+    px,
+    pc,
+    pt
 }

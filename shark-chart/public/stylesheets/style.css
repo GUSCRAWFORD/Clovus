@@ -13,7 +13,13 @@ a {
   background-color: rgba(0,0,0,.05);
   padding:5pt;
 }
+<<<<<<< HEAD
 
+=======
+resizeable-view-panel {
+  position:relative;
+}
+>>>>>>> parent of c2491d7... work on reszising
 resizeable-view-panel>.panel.panel-default>.panel-body {
   box-shadow: 0 2px 5px rgba(0,0,0,.2) inset;
 }

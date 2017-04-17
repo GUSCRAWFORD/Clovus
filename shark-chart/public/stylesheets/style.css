@@ -14,7 +14,7 @@ a {
   padding:5pt;
 }
 resizeable-view-panel {
-  position:absolute;
+  position:relative;
   display:block;
   margin:5pt;
 }

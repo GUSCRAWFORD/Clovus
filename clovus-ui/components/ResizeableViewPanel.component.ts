@@ -5,12 +5,15 @@ import * as ng from 'angular';
  * This component is a resizable div
  * 
  */
-enum Sides {
+
+enum CssProp {
     none,
     left,
     top,
     right,
-    bottom
+    bottom,
+    width,
+    height
 }
 export class ResizeableViewPanel {
     public static $inject = ['$element', '$scope'];
@@ -29,18 +32,20 @@ export class ResizeableViewPanel {
         this.size.units = Models.Units.px;
 
         var elm = this.$element[0];
-        elm.style.left = elm.style.right = elm.style.top = elm.style.bottom = "0";
+        elm.style.left = elm.style.top = "0px";
+        elm.style.width = elm.offsetWidth + "px";
+        elm.style.height = elm.offsetHeight + "px";
     }
 
     private eventHash : any;
     public size : Models.Size;
     public mouse : Models.Location;
     
-    resize(side : Sides, value : number, units : Models.Units = Models.Units.px) {
+    resize(side : CssProp, value : number, units : Models.Units = Models.Units.px) {
         var elm = this.$element[0],
-            currentStyle = elm.style[Sides[side] as any].match(/\d+/),
+            currentStyle = elm.style[CssProp[side] as any].match(/\d+/),
             current = currentStyle ? parseInt(currentStyle[0],10):0;
-        elm.style[Sides[side] as any] = String(current + value) + Models.Units[units];
+        elm.style[CssProp[side] as any] = String(current + value) + Models.Units[units];
     }
     handleMouseUp (ctrl : ResizeableViewPanel) { return (event : any)=> {
         ctrl.$element.off('mousemove', ctrl.eventHash.mousemove);
@@ -52,31 +57,33 @@ export class ResizeableViewPanel {
         ctrl.size.width = elm.offsetWidth;
         ctrl.size.height = elm.offsetHeight;
         ctrl.$scope.$apply();
-        var side : Sides = ctrl.onEdge(ctrl);
+        var side : CssProp = ctrl.onEdge(ctrl);
         if (side) {
             ctrl.eventHash.mousemove = ctrl.handleMouseMove(ctrl, side);
             ctrl.$element.on('mousemove', ctrl.eventHash.mousemove);
         } 
         else ctrl.$element.off('mousemove', ctrl.eventHash.mousemove);
     } }
-    onEdge(ctrl : ResizeableViewPanel) :Sides {
+    onEdge(ctrl : ResizeableViewPanel) : CssProp {
         if (ctrl.mouse.x < ResizeableViewPanel.edgeSize) {
-            return Sides.left;
+            return CssProp.left;
         }
         if (ctrl.mouse.y < ResizeableViewPanel.edgeSize) {
-            return Sides.top;
+            return CssProp.top;
         }
         if (ctrl.size.width - ctrl.mouse.x < ResizeableViewPanel.edgeSize) {
-            return Sides.right;
+            return CssProp.right;
         }
         if (ctrl.size.height - ctrl.mouse.y < ResizeableViewPanel.edgeSize) {
-            return Sides.bottom;
+            return CssProp.bottom;
         }
-        return Sides.none;
+        return CssProp.none;
     }
-    handleMouseMove (ctrl : ResizeableViewPanel, side : Sides) { return (event : any)=> {
+    handleMouseMove (ctrl : ResizeableViewPanel, side : CssProp) { return (event : any)=> {
         var elm = ctrl.$element[0];
-        ctrl.resize(side, side % 2 ? event.movementX : event.movementY);
+        ctrl.resize(side, side % 2 ?
+            (side === CssProp.right ? (-1) * event.movementX : event.movementX)
+                : (side === CssProp.bottom ? (-1) * event.movementY : event.movementY));
         ctrl.$scope.$apply();
     } }    
 }

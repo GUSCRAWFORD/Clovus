@@ -1,5 +1,5 @@
 # Clovus or Shark Chart
-[![Build Status](https://travis-ci.org/GUSCRAWFORD/Clovus.svg?branch=develop)](https://travis-ci.org/GUSCRAWFORD/Clovus) [![Test Coverage](https://codeclimate.com/github/GUSCRAWFORD/Clovus/badges/coverage.svg?branch=develop)](https://codeclimate.com/github/GUSCRAWFORD/Clovus/coverage) [![Code Climate](https://codeclimate.com/github/GUSCRAWFORD/Clovus/badges/gpa.svg?branch=develop)](https://codeclimate.com/github/GUSCRAWFORD/Clovus)
+[![Build Status](https://travis-ci.org/GUSCRAWFORD/Clovus.svg?branch=work%2Fgeneral-gui%2Fresizeable-panel)](https://travis-ci.org/GUSCRAWFORD/Clovus) [![Test Coverage](https://codeclimate.com/github/GUSCRAWFORD/Clovus/badges/coverage.svg?branch=develop)](https://codeclimate.com/github/GUSCRAWFORD/Clovus/coverage) [![Code Climate](https://codeclimate.com/github/GUSCRAWFORD/Clovus/badges/gpa.svg?branch=develop)](https://codeclimate.com/github/GUSCRAWFORD/Clovus)
 
 A diagram engine
 

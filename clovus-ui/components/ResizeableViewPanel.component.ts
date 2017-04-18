@@ -18,12 +18,13 @@ enum CssProp {
 }
 export class ResizeableViewPanel {
     public static $inject = ['$element', '$scope'];
-    
+    public static edgeSize : number = 15;
+
     constructor (
         private $element : ng.IRootElementService,
         private $scope : ng.IScope
                 ) {
-        this.$element.on('mousedown', this.handleMouseDown(this));
+        
         this.mouse = new Models.Location();
         this.size = new Models.Size();
         this.size.units = Models.Units.px;
@@ -32,12 +33,17 @@ export class ResizeableViewPanel {
         elm.style.left = elm.style.top = "0px";
         elm.style.width = elm.offsetWidth + "px";
         elm.style.height = elm.offsetHeight + "px";
-
+        this.eventHash  = {
+            'mousedown': this.handleMouseDown(this),
+            
+        };
     }
 
     public size : Models.Size;
     public mouse : Models.Location;
     
+    private eventHash : any;
+
     resize(side : CssProp, value : number, units : Models.Units = Models.Units.px) {
         var elm = this.$element[0],
             currentStyle = elm.style[CssProp[side] as any].match(/\d+/),

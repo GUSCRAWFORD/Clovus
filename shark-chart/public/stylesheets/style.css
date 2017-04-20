@@ -14,11 +14,16 @@ a {
   padding:5pt;
 }
 resizeable-view-panel {
-  position:relative;
+  position:absolute;
   display:block;
   margin:5pt;
 
 }
 resizeable-view-panel>.panel.panel-default>.panel-body {
   box-shadow: 0 2px 5px rgba(0,0,0,.2) inset;
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
 }

@@ -19,7 +19,10 @@ enum CssProp {
 export class ResizeableViewPanel {
     public static $inject = ['$element', '$scope'];
     public static edgeSize : number = 15;
+    public static template : string = require('./ResizeableViewPanel.partial.html');
+    public static bindings : any = {
 
+    };
     constructor (
         private $element : ng.IRootElementService,
         private $scope : ng.IScope
@@ -30,13 +33,12 @@ export class ResizeableViewPanel {
         this.size.units = Models.Units.px;
 
         var elm = this.$element[0];
-        elm.style.left = elm.style.top = "0px";
-        elm.style.width = elm.offsetWidth + "px";
-        elm.style.height = elm.offsetHeight + "px";
         this.eventHash  = {
             'mousedown': this.handleMouseDown(this),
-            
+            'mouseup': this.handleMouseUp(this),
+            'mousemove' : null
         };
+        for (var event in this.eventHash) if (this.eventHash[event]) this.$element.on(event, this.eventHash[event]);
     }
 
     public size : Models.Size;
@@ -88,9 +90,12 @@ export class ResizeableViewPanel {
                 : (side === CssProp.bottom ? (-1) * event.movementY : event.movementY));
         ctrl.$scope.$apply();
     } }    
-
+    handleMouseUp (ctrl : ResizeableViewPanel) { return (event :any )=> {
+        ctrl.$element.off('mousemove', ctrl.eventHash.mousemove);
+    } }
 }
 ClovusUi.ngModule.component((ResizeableViewPanel as any).name.toCamelCase(), {
     controller: ResizeableViewPanel,
-    template: require('./ResizeableViewPanel.partial.html')
+    template: ResizeableViewPanel.template,
+    bindings: ResizeableViewPanel.bindings
 });
